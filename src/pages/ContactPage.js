@@ -1,22 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ContactPage() {
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Contact Us
-          </h1>
+          <div>
+            <h1 className="hover-underline-animation sm:text-5xl text-3xl font-black title-font mb-4 text-gray-900">
+              CONNECT WITH US
+            </h1>
+          </div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
             gentrify.
           </p>
         </div>
         <div className="flex justify-between gap-6 flex-wrap md:flex-nowrap">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 ">
             <div>
-              <h1>Get in touch</h1>
+              <h2 className="sm:text-4xl text-2xl font-bold">Get in touch</h2>
               <p>
                 We would love to hear from you <br /> Send us a message and get
                 a call back
@@ -119,17 +122,35 @@ function ContactPage() {
                     Button
                   </button>
                 </div>
-                <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                  <a className="text-indigo-500">example@email.com</a>
-                  <p className="leading-normal my-5">
-                    49 Smith St.
-                    <br />
-                    Saint Cloud, MN 56301
-                  </p>
-                </div>
               </div>
             </div>
           </form>
+        </div>
+      </div>
+
+      <div className="bg-black text-white flex flex-col">
+        <div className="self-center text-9xl font-extrabold m-4 ">Bluebox</div>
+
+        <div className="flex mx-20 border-t-2 border-[#4a4a4a] pt-10">
+          <div className="flex flex-1 gap-2">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </div>
+          <div className="flex flex-1 gap-3 justify-self-center">
+            <Link className="no-underline text-inherit" to={"/"}>
+              <span>About</span>
+            </Link>
+            <Link className="no-underline text-inherit" to={"/contact"}>
+              <span>Contact</span>
+            </Link>
+            <span>Case Studies</span>
+            <span>Blog</span>
+          </div>
+          <div className="  text-[12px] ">
+            Proudly created in Nepal. <br />
+            All Right Reserved, All Wrong Reversed.
+          </div>
         </div>
       </div>
     </section>

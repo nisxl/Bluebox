@@ -35,7 +35,7 @@ function Step() {
           <h1 className="w-[510px]">
             Endeavor through simple yet smarter system
           </h1>
-          <steps className="w-[510px] flex flex-col gap-4">
+          <section className="w-[510px] flex flex-col gap-4">
             <div className="flex gap-4 hide step">
               <div className="flex flex-col">
                 <button className="w-[50px] h-[50px] border-1 border-[#353c44] text-white bg-slate-800 focus:outline-none transition-all duration-500 ease-in-out rounded-full text-lg hover:bg-white hover:text-[#292e34] hover:scale-105 transform">
@@ -91,7 +91,7 @@ function Step() {
                 </span>
               </div>
             </div>
-          </steps>
+          </section>
         </div>
         <div className="w-full md:w-[50%] object-fill">
           <img src="../images/iphone.png" alt="iPhone" />

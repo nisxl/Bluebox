@@ -5,26 +5,36 @@ import { menu, close } from "ionicons/icons";
 import { Transition } from "@headlessui/react";
 import { motion, useScroll } from "framer-motion";
 import { Link } from "react-router-dom";
+
 function Body() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isHovered, setIsHovered] = useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+  console.log(isHovered);
 
   return (
     <div className="">
       <div className="relative">
         {/* #eeeee4 #f9e299 */}
+
         <div
-          className={`h-fit bg-gradient-to-r from-[#0057FF] to-[#AA00FF] text-[#eeeee4]${
-            isOpen ? "filter blur-sm" : ""
-          }`}
+          className={`h-fit text-[#eeeee4] ${isOpen ? "filter blur-sm" : ""}`}
+          style={{
+            backgroundImage: isHovered
+              ? "url(../images/lollipop.jpg)"
+              : "url(../images/pink.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            // transition: "background-image 0.3s ease-in-out",
+          }}
         >
           <div className="flex flex-col md:max-w-5xl mx-auto py-20">
             <header className="body-font">
               <div className="flex justify-between pb-[120px] flex-col md:flex-row items-center">
-                <div className="text-[3em] md:text-[2em] font-bold font-sans ">
+                <div className="text-[3em] md:text-[2em] font-bold font-sans">
                   <span className="text-white mr-[0.25em]">BLUE</span>
                   BOX
                 </div>
@@ -53,7 +63,14 @@ function Body() {
             </header>
             <section className="md:max-w-xl">
               <div className="text-4xl font-semibold mb-4">
-                Create a unique, professional logo for your business
+                <span
+                  className="font-bold text-4xl hover:bg-slate-700 px-2 rounded-md"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  Create
+                </span>{" "}
+                a unique, professional logo for your business
               </div>
               <div className="font-normal text-[18px]">
                 Kickstart your brand with business card designs, social media
@@ -67,6 +84,7 @@ function Body() {
             </div>
           </div>
         </div>
+
         {isOpen && (
           <div
             className="fixed top-0 left-0 w-screen h-screen bg-black opacity-40"
