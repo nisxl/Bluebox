@@ -5,7 +5,10 @@ function Header() {
     <div>
       <header class="text-gray-600 body-font">
         <div class="md:container  md:flex-row flex-col  mx-auto flex flex-wrap p-5 items-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <a
+            href=""
+            class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -18,6 +21,7 @@ function Header() {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
+
             <span class="ml-3 text-xl">Tailblocks</span>
           </a>
           <nav class="md:ml-auto flex flex-col md:flex-row flex-wrap items-center text-base md:justify-center">

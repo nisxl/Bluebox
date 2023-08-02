@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-
+import ReactToPrint from "react-to-print";
 function ContactPage() {
+  const componentRef = useRef(null);
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto">
+        <ReactToPrint
+          trigger={() => {
+            return <button>Print the table</button>;
+          }}
+          content={() => componentRef.current} // Use componentRef.current
+          documentTitle="new document"
+          pageStyle="print"
+        />
+
         <div className="flex flex-col text-center w-full mb-12">
           <div>
             <h1 className="hover-underline-animation sm:text-5xl text-3xl font-black title-font mb-4 text-gray-900">
@@ -63,7 +73,7 @@ function ContactPage() {
             method="POST"
             action="https://formspree.io/f/xpzgwnzk"
           >
-            <div className="lg:w-[40vw] md:w-2/3">
+            <div ref={componentRef} className="lg:w-[40vw] md:w-2/3">
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
                   <label

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-
+import { Link } from "react-scroll";
+import { Element } from "react-scroll";
 function Step() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -29,9 +30,11 @@ function Step() {
     <>
       <div className="flex flex-wrap">
         <div className="flex flex-col items-center w-full md:w-[50%] justify-center">
-          <span className="text-gradient-to-r from-[#0057FF] to-[#AA00FF] w-[510px]">
-            WE IDEATE AND ESCORT
-          </span>
+          <div style={{ position: "sticky", top: 0 }}>
+            <span className="text-gradient-to-r from-[#0057FF] to-[#AA00FF] w-[510px] sticky top-0">
+              WE IDEATE AND ESCORT
+            </span>
+          </div>
           <h1 className="w-[510px]">
             Endeavor through simple yet smarter system
           </h1>
@@ -108,7 +111,6 @@ function Step() {
           <div className="logo hide">
             <img src="../images/iphone.png" alt="iPhone" />
           </div>
-
           <div className="logo hide">
             <img src="../images/iphone.png" alt="iPhone" />
           </div>

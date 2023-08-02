@@ -10,6 +10,48 @@ code {
     monospace;
 }
 
+h3 {
+  font-size: 72px;
+  font-weight: 800;
+  background: -webkit-linear-gradient(#6c005d, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* print-styles.css */
+
+@media print {
+  /* Add your custom print styles here */
+  body {
+    font-family: "Helvetica", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    font-size: 80px;
+  }
+
+  h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  /* Add more custom styles as needed */
+}
+
+
+.active{
+  text-decoration: underline;
+  
+  background-color: #717171;
+  
+}
+
 .navLink {
   text-decoration: "none";
 }
