@@ -27,7 +27,7 @@ function Body() {
           style={{
             backgroundImage: isHovered
               ? "url(../images/lollipop.jpg)"
-              : "url(../images/pink.jpg)",
+              : "url(../images/matrin.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             // transition: "background-image 0.3s ease-in-out",
@@ -82,44 +82,6 @@ function Body() {
               <button className="mx-auto mt-[100px] text[1.125em] font-bold text-white bg-[#292e34] border-0 py-3 px-12 focus:outline-none hover:bg-[#353c44] transition-all duration-300 ease-in-out rounded-full text-lg">
                 Create My Logo
               </button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="bg-slate-50 flex justify-between 
-          items-center h-[64px] sticky top-0"
-        >
-          <div>BLUEBOX</div>
-          <div className="flex pr-10 gap-8">
-            <SLink
-              activeClass="active"
-              to="section1"
-              spy={true}
-              smooth={true}
-              offset={-70} // Adjust this offset based on your layout
-              duration={0}
-            >
-              <p className="cursor-pointer">Home</p>
-            </SLink>
-            <SLink
-              activeClass="active"
-              to="section2"
-              spy={true}
-              smooth={true}
-              offset={-70} // Adjust this offset based on your layout
-              duration={0}
-            >
-              <p className="cursor-pointer">Categories</p>
-            </SLink>
-            <p className="cursor-pointer">About Us</p>
-            <p className="cursor-pointer">Contact Us</p>
-
-            <div className="cursor-pointer">
-              <ion-icon name="accessibility-outline"></ion-icon>
-            </div>
-            <div className="cursor-pointer">
-              <ion-icon name="airplane-outline"></ion-icon>
             </div>
           </div>
         </div>
@@ -192,18 +154,17 @@ function Body() {
             className="h-[400px] object-contain"
           ></img>
         </section>
-        <Element className="section1">
-          <section className="bg-[#a0acdc] text-white flex flex-col gap-8 items-center">
-            <h1 className="text-[32px] font-bold flex flex-col">
-              <span className="mt-20">Instantly customize and export </span>
-              <span className="text-[16px] font-medium">
-                Right in your browser, no designer or software needed
-              </span>
-            </h1>
 
-            <img src="../images/gril.png" className="w-[400px] h-[400px]" />
-          </section>
-        </Element>
+        <section className="bg-[#a0acdc] text-white flex flex-col gap-8 items-center">
+          <h1 className="text-[32px] font-bold flex flex-col">
+            <span className="mt-20">Instantly customize and export </span>
+            <span className="text-[16px] font-medium">
+              Right in your browser, no designer or software needed
+            </span>
+          </h1>
+
+          <img src="../images/gril.png" className="w-[400px] h-[400px]" />
+        </section>
         <Transition show={isOpen}>
           <div className="fixed top-0 right-0 w-[280px] bg-[#001529] h-screen shadow">
             <button

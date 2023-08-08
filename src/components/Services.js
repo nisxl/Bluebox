@@ -31,10 +31,10 @@ function Services() {
         <div className="w-full lg:w-1/3 lg:order-7">
           04 Branding Logo Design
         </div>
-        <img
+        {/* <img
           className="w-full lg:w-1/3 lg:order-10"
           src="../images/print.jpg"
-        />
+        /> */}
 
         <h3 className="w-full lg:w-1/3 lg:order-9">05 Branding Logo Design</h3>
         <img className="w-full lg:w-1/3 lg:order-8" src="../images/az.jpg" />
