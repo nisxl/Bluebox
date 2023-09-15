@@ -9,9 +9,22 @@ import Packages from "../components/Packages";
 import Head from "../components/Head";
 import ContactPage from "./ContactPage";
 import { Element } from "react-scroll";
+import Clients from "../components/Clients";
+import AboutUs from "../components/AboutUs";
 function HomePage() {
+  const sponsors = [
+    { name: "Sponsor 1", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 2", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 3", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 4", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 5", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 6", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 7", logoUrl: "../images/lollipop.jpg" },
+    { name: "Sponsor 8", logoUrl: "../images/lollipop.jpg" },
+    // Add more sponsors as needed
+  ];
   return (
-    <div className="">
+    <div className="bg-white">
       <div className="sticky top-0 z-10">
         <Head />
       </div>
@@ -34,6 +47,15 @@ function HomePage() {
       <Element className="contactUs">
         <ContactPage />
       </Element>
+
+      <Element className="clients">
+        <Clients sponsors={sponsors} />
+      </Element>
+
+      <Element className="aboutUs">
+        <AboutUs />
+      </Element>
+
       <Footer />
     </div>
   );

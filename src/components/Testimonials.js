@@ -41,6 +41,24 @@ function Testimonials() {
   return (
     <div className="h-[400px] flex flex-col">
       <div className="slideshow-container">
+        {/* <section>
+          <div
+            className="px-[50px] py-[80px] bg-white
+           rounded-2xl text-left shadow-lg relative before:content-[''] 
+           before:absolute before:bottom-[-10rem] before:left-[50%]
+            before:border-[5rem] 
+            before:border-white 
+           before:border-transparent before:border-t-red-300"
+          >
+            texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+            texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+            texttexttexttexttexttexttexttexttexttext
+          </div>
+          <div>
+            <img src="" className="max-w-sm h-[10rem] border-2 rounded-md" />
+          </div>
+        </section> */}
+
         <div className={`mySlides fade ${slideIndex === 1 ? "show" : ""}`}>
           {/* <div className="numbertext">1 / 3</div> */}
           <div className="flex flex-col items-center">

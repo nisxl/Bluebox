@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<HomePage />} />
-          {/* <Route path="contact" element={<ContactPage />} /> */}
+          <Route path="contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </div>
