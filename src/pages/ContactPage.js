@@ -62,7 +62,7 @@ function ContactPage() {
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
                   <label
-                    for="username"
+                    htmlFor="username"
                     className="leading-7 text-sm text-gray-600"
                   >
                     User Name
@@ -79,7 +79,7 @@ function ContactPage() {
                 </div>
                 <div className="p-2 w-1/2">
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="leading-7 text-sm text-gray-600"
                   >
                     Email
@@ -96,7 +96,7 @@ function ContactPage() {
                 </div>
                 <div className="p-2 w-full">
                   <label
-                    for="message"
+                    htmlFor="message"
                     className="leading-7 text-sm text-gray-600"
                   >
                     Message
