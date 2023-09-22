@@ -5,10 +5,21 @@ function Head() {
   return (
     <div
       className="bg-slate-50 flex justify-between 
-          items-center h-[64px]"
+          items-center h-[64px] px-6"
     >
-      <div>BLUEBOX</div>
-      <div className="flex items-center pr-10 gap-8">
+      <div className="w-10 h-10 cursor-pointer">
+        <SLink
+          activeClass="SActive"
+          to="landing"
+          spy={true}
+          smooth={true}
+          offset={-70} // Adjust this offset based on your layout
+          duration={0}
+        >
+          <img src="../images/logo.png" />
+        </SLink>
+      </div>
+      <div className="flex items-center flex-wrap pr-10 gap-8">
         <SLink
           activeClass="SActive"
           to="aboutUs"

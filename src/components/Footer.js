@@ -7,10 +7,12 @@ function Footer() {
 
   return (
     <div>
-      <div className="bg-black text-white flex flex-col">
-        <div className="self-center text-9xl font-extrabold m-4 ">Bluebox</div>
+      <div className="bg-black pb-20 pt-10 text-white flex flex-col">
+        <div className="self-center text-5xl md:text-9xl font-extrabold m-4 ">
+          Bluebox
+        </div>
 
-        <div className="flex mx-20 border-t-2 border-[#4a4a4a] pt-10">
+        <div className="flex flex-col md:flex-row mx-20 border-t-2 border-[#4a4a4a] pt-10">
           <div className="flex flex-1 gap-2">
             <ion-icon name="logo-facebook"></ion-icon>
 

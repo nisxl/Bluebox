@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { Element } from "react-scroll";
+import StepTwo from "./StepTwo";
 function Step() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
         } else {
@@ -28,13 +28,14 @@ function Step() {
 
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap py-6">
         <div className="flex flex-col items-center w-full md:w-[50%] justify-center">
           <div style={{ position: "sticky", top: 0 }}>
-            <span className="text-gradient-to-r from-[#0057FF] to-[#AA00FF] w-[510px] sticky top-0">
+            <span className="hover-underline-animation w-[510px] sticky top-0">
               WE IDEATE AND ESCORT
             </span>
           </div>
+
           <h1 className="w-[510px]">
             Endeavor through simple yet smarter system
           </h1>
@@ -97,24 +98,27 @@ function Step() {
           </section>
         </div>
         <div className="w-full md:w-[50%] object-fill">
-          <img src="../images/iphone.png" alt="iPhone" />
+          <img src="../images/camera.png" alt="camera" />
         </div>
-        <div className="logos ">
+        {/* <div className="logos ">
           <div className="logo hide">
-            <img src="../images/iphone.png" alt="iPhone" />
+            <img src="../images/camera.png" alt="camera" />
           </div>
 
           <div className="logo hide">
-            <img src="../images/iphone.png" alt="iPhone" />
+            <img src="../images/camera.png" alt="camera" />
           </div>
 
           <div className="logo hide">
-            <img src="../images/iphone.png" alt="iPhone" />
+            <img src="../images/camera.png" alt="camera" />
           </div>
           <div className="logo hide">
-            <img src="../images/iphone.png" alt="iPhone" />
+            <img src="../images/camera.png" alt="camera" />
           </div>
-        </div>
+        </div> */}
+      </div>
+      <div className="flex items-center justify-center">
+        <StepTwo />
       </div>
     </>
   );
