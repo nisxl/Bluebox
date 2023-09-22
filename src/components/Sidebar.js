@@ -13,7 +13,7 @@ function Sidebar() {
   return (
     <div>
       <Transition show={isOpen}>
-        <div className="fixed top-0 z-10 right-0 w-[280px] bg-[#001529] h-screen shadow">
+        <div className="bg-[#001529] h-screen shadow">
           <button
             className="absolute top-4 right-4 text-gray-600"
             onClick={toggleSidebar}

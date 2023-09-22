@@ -30,16 +30,14 @@ function Step() {
     <>
       <div className="flex flex-wrap py-6">
         <div className="flex flex-col items-center w-full md:w-[50%] justify-center">
-          <div style={{ position: "sticky", top: 0 }}>
-            <span className="hover-underline-animation w-[510px] sticky top-0">
+          <div>
+            <span className="hover-underline-animation">
               WE IDEATE AND ESCORT
             </span>
           </div>
 
-          <h1 className="w-[510px]">
-            Endeavor through simple yet smarter system
-          </h1>
-          <section className="w-[510px] flex flex-col gap-4">
+          <h1 className="">Endeavor through simple yet smarter system</h1>
+          <section className=" flex flex-col gap-4">
             <div className="flex gap-4 hide step">
               <div className="flex flex-col">
                 <button className="w-[50px] h-[50px] border-1 border-[#353c44] text-white bg-slate-800 focus:outline-none transition-all duration-500 ease-in-out rounded-full text-lg hover:bg-white hover:text-[#292e34] hover:scale-105 transform">
