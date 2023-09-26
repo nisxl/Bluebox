@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+
 import { Link as SLink } from "react-scroll";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 function Head() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
   return (
-    <div
+    <motion.div
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate={mainControls}
+      transition={{ duration: 0.8, delay: 0.45 }}
       className="bg-slate-50 flex justify-between 
           items-center h-[64px] px-6"
     >
@@ -103,7 +122,7 @@ function Head() {
           <ion-icon name="airplane-outline"></ion-icon>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

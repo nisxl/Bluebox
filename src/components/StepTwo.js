@@ -1,12 +1,22 @@
 import React from "react";
+import { Link as SLink } from "react-scroll";
 
 function StepTwo() {
   return (
     <div className="my-10">
       <div className="flex flex-col md:flex-row text-xl font-semibold  ">
-        <div className="z-1 flex items-center justify-center text-[1.125em] font-bold text-white bg-blue-400 border-0 h-[50px] md:h-[180px] w-[180px] focus:outline-none rounded-md md:rounded-full text-lg">
-          Create My Logo
-        </div>
+        <SLink
+          activeClass="SActive"
+          to="contactUs"
+          spy={true}
+          smooth={true}
+          offset={-70} // Adjust this offset based on your layout
+          duration={0}
+        >
+          <button className="z-1 flex items-center justify-center text-[1.125em] font-bold text-white bg-blue-400 border-0 h-[50px] md:h-[180px] w-[180px] focus:outline-none rounded-md md:rounded-full text-lg">
+            Start Free Trial
+          </button>
+        </SLink>
         <div className="flex min-h-[120px] gap-3 md:gap-14 px-10 flex-col items-center md:flex-row md:ml-[-25px] z-0 shadow">
           <div className="flex flex-col gap-[10px] items-center">
             <img src="../images/Steps/idea.png" className="h-10 w-10" />

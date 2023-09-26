@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { IonIcon } from "@ionic/react";
-import Testimonials from "./Testimonials";
-import { menu, close } from "ionicons/icons";
+import { menu } from "ionicons/icons";
 import { Transition } from "@headlessui/react";
-import { motion, useScroll } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { Link as SLink } from "react-scroll";
-import { Element } from "react-scroll";
-import Head from "./Head";
 
 function Body() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
   const [isOpen, setIsOpen] = useState(false);
 
   const [isHovered, setIsHovered] = useState(false);
@@ -17,12 +16,14 @@ function Body() {
     setIsOpen(!isOpen);
   };
   console.log(isHovered);
-
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
   return (
     <div className="">
       <div className="relative">
-        {/* #eeeee4 #f9e299 */}
-
         <div
           className={`h-fit text-[#eeeee4] ${
             isOpen ? "filter blur-sm" : ""
@@ -36,7 +37,7 @@ function Body() {
             // transition: "background-image 0.3s ease-in-out",
           }}
         >
-          <div className="flex flex-col md:max-w-5xl mx-auto py-20">
+          <div className="flex flex-col md:max-w-5xl mx-auto py-60">
             <header className="body-font">
               <IonIcon
                 icon={menu}
@@ -45,26 +46,65 @@ function Body() {
               />
             </header>
             <section className="md:max-w-xl">
-              <div className="text-4xl font-semibold mb-4">
+              <motion.div
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0, y: 100 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 1.1, delay: 0 }}
+                className="text-5xl  font-semibold mb-4"
+              >
                 <span
-                  className="font-bold text-4xl hover:bg-slate-700 px-2 rounded-md"
+                  className="font-bold text-5xl  hover:bg-slate-700 px-2 rounded-md"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   Create
                 </span>{" "}
-                a unique, professional logo for your business
-              </div>
-              <div className="font-normal text-[18px]">
-                Kickstart your brand with business card designs, social media
-                graphics, app icons, letter heads and more
-              </div>
+                a unique, professional identity for your business
+              </motion.div>
+              <motion.div
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 1.1, delay: 0 }}
+                className="font-normal text-[18px]"
+              >
+                Boost your digital presence and make your brand more visible
+                with Bluebox. Kickstart your brand with social media designs, 3D
+                creatives, website creation, and engaging TikTok videos.
+              </motion.div>
             </section>
-            <div>
-              <button className="mx-auto mt-[100px] text[1.125em] font-bold text-white bg-[#292e34] border-0 py-3 px-12 focus:outline-none hover:bg-[#353c44] transition-all duration-300 ease-in-out rounded-full text-lg">
-                Create My Logo
-              </button>
-            </div>
+            <motion.div
+              ref={ref}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate={mainControls}
+              transition={{ duration: 1.1, delay: 0 }}
+            >
+              <SLink
+                activeClass="SActive"
+                to="contactUs"
+                spy={true}
+                smooth={true}
+                offset={-70} // Adjust this offset based on your layout
+                duration={0}
+              >
+                <button className="mx-auto mt-[100px] text[1.125em] font-bold text-white bg-[#292e34] border-0 py-3 px-12 focus:outline-none hover:bg-[#353c44] transition-all duration-300 ease-in-out rounded-full text-lg">
+                  Start Free Trial
+                </button>
+              </SLink>
+            </motion.div>
           </div>
         </div>
 

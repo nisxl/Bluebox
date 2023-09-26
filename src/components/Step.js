@@ -98,22 +98,6 @@ function Step() {
         <div className="w-full md:w-[50%] object-fill">
           <img src="../images/camera.png" alt="camera" />
         </div>
-        {/* <div className="logos ">
-          <div className="logo hide">
-            <img src="../images/camera.png" alt="camera" />
-          </div>
-
-          <div className="logo hide">
-            <img src="../images/camera.png" alt="camera" />
-          </div>
-
-          <div className="logo hide">
-            <img src="../images/camera.png" alt="camera" />
-          </div>
-          <div className="logo hide">
-            <img src="../images/camera.png" alt="camera" />
-          </div>
-        </div> */}
       </div>
       <div className="flex items-center justify-center">
         <StepTwo />

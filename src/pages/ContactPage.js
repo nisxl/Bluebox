@@ -1,64 +1,133 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+
 function ContactPage() {
-  const componentRef = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
   return (
     <section className=" text-gray-600 body-font relative bg-slate-50">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <div>
-            <h1 className="hover-underline-animation sm:text-5xl text-3xl font-black title-font mb-4 text-gray-900">
+            <motion.h1
+              ref={ref}
+              variants={{
+                hidden: { opacity: 0, y: 25 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate={mainControls}
+              transition={{ duration: 1.1, delay: 0 }}
+              className="hover-underline-animation sm:text-5xl text-3xl font-black title-font mb-4 text-gray-900"
+            >
               CONNECT WITH US
-            </h1>
+            </motion.h1>
           </div>
         </div>
         <div className="flex justify-between gap-6 flex-wrap md:flex-nowrap">
           <div className="flex flex-col gap-2 ">
             <div>
-              <h2 className="sm:text-4xl text-2xl font-bold">Get in touch</h2>
-              <p>
+              <motion.h2
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0, y: 25 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 1.1, delay: 0 }}
+                className="sm:text-4xl text-2xl font-bold"
+              >
+                Get in touch
+              </motion.h2>
+              <motion.p
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0, y: 25 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 1.1, delay: 0 }}
+              >
                 We would love to hear from you <br /> Send us a message and get
                 a call back
-              </p>
+              </motion.p>
             </div>
-
-            <div className="flex flex-col">
-              <div className="flex gap-2 items-center">
-                <ion-icon name="call"></ion-icon>
-                <span>Phone</span>
-              </div>
-
-              <span>+977 9818176503</span>
-            </div>
-
-            <div className="flex flex-col">
-              <div className="flex gap-2 items-center">
-                <ion-icon name="location"></ion-icon>
-                <span>Address</span>
-              </div>
-              <a
-                href="https://goo.gl/maps/6XYnG1CV2hhk6M258"
-                target="_blank"
-                rel="noopener noreferrer"
+            <motion.div
+              ref={ref}
+              variants={{
+                hidden: { opacity: 0, y: -75 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate={mainControls}
+              transition={{ duration: 0.75, delay: 0.4 }}
+            >
+              <div
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0, y: 25 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 1.1, delay: 0 }}
+                className="flex flex-col"
               >
-                <span>Kupondole Heights, Lalitpur, Nepal</span>
-              </a>
-            </div>
+                <div className="flex gap-2 items-center">
+                  <ion-icon name="call"></ion-icon>
+                  <span>Phone</span>
+                </div>
 
-            <div className="flex flex-col">
-              <div className="flex gap-2 items-center">
-                <ion-icon name="mail"></ion-icon>
-                <span>Email</span>
+                <span>+977 9818176503</span>
               </div>
 
-              <span>info.bllueboxco@gmail.com</span>
-            </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2 items-center">
+                  <ion-icon name="location"></ion-icon>
+                  <span>Address</span>
+                </div>
+                <a
+                  href="https://goo.gl/maps/6XYnG1CV2hhk6M258"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Kupondole Heights, Lalitpur, Nepal</span>
+                </a>
+              </div>
+
+              <div className="flex flex-col">
+                <div className="flex gap-2 items-center">
+                  <ion-icon name="mail"></ion-icon>
+                  <span>Email</span>
+                </div>
+
+                <span>info.bllueboxco@gmail.com</span>
+              </div>
+            </motion.div>
           </div>
-          <form
+          <motion.form
+            ref={ref}
+            variants={{
+              hidden: { opacity: 0, y: 75 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.75, delay: 0.4 }}
             className=""
             method="POST"
             action="https://formspree.io/f/xpzgwnzk"
           >
-            <div ref={componentRef} className="lg:w-[40vw] md:w-2/3">
+            <div className="lg:w-[40vw] md:w-2/3">
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
                   <label
@@ -119,7 +188,7 @@ function ContactPage() {
                 </div>
               </div>
             </div>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>
